@@ -1,0 +1,647 @@
+/** * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/) * http://cssreset.com */
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video {	margin: 0;	padding: 0;	border: 0;	font-size: 100%;	font: inherit;	vertical-align: baseline;}/* HTML5 display-role reset for older browsers */article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {	display: block;}body {	line-height: 1;}ol, ul {	list-style: none;}blockquote, q {	quotes: none;}blockquote:before, blockquote:after,q:before, q:after {	content: '';	content: none;}table {	border-collapse: collapse;	border-spacing: 0;}
+
+/* ここにCSSを書いてデザインを入れよう */
+@charset "utf-8";
+.container {
+  width: 980px;
+  margin: 0 auto;
+  background-color: #666;
+  box-shadow: rgba(0, 0, 0, .4) 0 0 8px;
+  overflow: hidden; // floatを使った場合の対策
+}
+
+.header {
+	display: flex;
+  justify-content: center;
+  font-size: 35px;
+  padding: 30px;
+  font-weight: bolder;
+  background-color: #A9A9A9;
+}
+
+.header__title {
+  color: #4f4b4b;
+  text-shadow: 1px 1px 5px #9c9c9c;
+}
+
+.global-nav__items {
+  display: flex;
+  justify-content: center;
+}
+
+.global-nav__item {
+  flex: 1;
+  padding: 10px;
+}
+
+
+.global-nav__link {
+ height: 44px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.global-nav__item:nth-child(odd) {
+  background-color: #D3D3D3;
+}
+
+.global-nav__item:nth-child(even) {
+  background-color: #999797;
+}
+
+.global-nav ul li a{
+  text-decoration: none; /* 文字の下線を消す */
+  font-weight: bold;
+  color: #4f4b4b;
+}
+
+.bread-crumbs ol {
+  display: flex;
+  margin: 10px 20px; 
+  
+}
+
+/*　参考 パンくずリスト https://saruwakakun.com/html-css/basic/breadcrumb */
+
+.bread-crumbs li:after {
+  content: '>';
+  padding: 0 10px;
+}
+.bread-crumbs__link {
+  color: #e6e6e6;
+  text-decoration: none;
+  font-size: small;
+}
+
+.top-ads ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 
+}
+
+.top-ads{
+  background-color: #D3D3D3;
+}
+
+.top-ads__items img{
+  width: 100%;
+  padding: 15px;
+}
+
+
+.main {
+  width: 645px;
+  float: right;
+  background-color: #D3D3D3;
+}
+
+.main:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+
+
+.aside {
+  width: 295px;
+  float: left;
+  margin: 20px;
+}
+.local-nav {
+  display: flex;
+}
+.local-nav__item {
+  height: 40px;
+}
+
+
+img {
+  width: 100%;
+}
+
+
+.main-header {
+ 　　position: relative;
+  background: #fffcfc;
+  height: 70px;
+  padding: 1ex;
+  padding-left: 50px;
+  font-size: xx-large;
+  font-weight: bolder;
+  overflow: hidden; /* はみ出た影をかくす　*/
+}
+
+
+.main-header:before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 15px;
+  width: 10px;
+  height: 10px;
+  background: #4d4d4d;
+  border-left: 10px solid #999797;
+}
+
+.main-header:after {
+  content: "";
+  position: absolute;
+  bottom: 25px;
+  left: 15px;
+  width: 10px;
+  height: 10px;
+  background: #4d4d4d;
+  border-right: 10px solid #999797 ;
+}
+
+.main-header { 
+  position: relative;
+  box-shadow: 0px 1px 0px rgba(0,0,0,1);
+  
+}
+
+/* https://coliss.com/articles/build-websites/operation/css/css-tutorial-simple-folded-corner-effect-by-designshack.html */
+.main-header__title:before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  width: 0px;
+  height: 0px;
+  border-top: 25px solid #D3D3D3;
+  border-left: 25px solid #999797;
+  box-shadow: 1px 3px 7px rgba(0,0,0,0.3); /* うまく下だけ影をつけることができない　*/
+}
+
+.main-header__title:after {
+  content: "";
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  width: 0px;
+  height: 0px;
+  border-bottom: 25px transparent;
+  border-right: 25px solid #D3D3D3;
+}
+
+.article {
+  line-height: 1.7;
+  
+}
+.article__title{
+  position: relative;
+  padding: 1ex;
+  height: 70px;
+  padding-left: 50px;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.article__title:before {
+  content: "";
+  left: 10px;
+
+  width: 10px;
+  height: 18px;
+  background-color: #999797;
+  position: absolute;
+  border-bottom: 18px solid #4d4d4d;
+}
+
+
+.article__strong {
+  font-weight: bold;
+}
+
+.article__paragraph {
+  margin: 20px;
+  
+}
+
+.article__sub-title {
+  padding: 1ex 2em;
+  font-size: larger;
+  font-weight: bold;
+  position: relative;
+}
+
+.article__sub-title:before {
+  position: absolute;
+  left: 10px;
+  content: "";
+  top: 18px;
+  width: 5px;
+  height: 16px;
+  background-color: #4d4d4d
+}
+
+.article__sub-title:after{
+  position: absolute;
+  content: "";
+  border-color: transparent transparent transparent #4d4d4d;
+  border-width: 8px 14px 8px 14px;/*高さ13.8 */
+  top: 18px;
+  left: 18px;
+  border-style: solid;
+  
+}
+
+.article__unorder-list {
+  text-indent: 2em;
+}
+
+/* リストの前に'・'をつける　参考:https://takalog.jp/archives/1335 */
+
+.article__unorder-list-item:before {
+  position: relative;
+  top: -2px;
+  left: -18px;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  content: '';
+  border-radius: 100%;
+  background: black;
+}
+
+.article__blockquote {
+  position: relative;
+  padding: 3em;
+}
+
+.article__blockquote:after {
+  position: absolute;
+  border: solid #999797;
+  content: "";
+  height: 430px;
+  left: 1.5em;
+  top: 3.5em;
+}
+
+.article__blockquote:before{
+  position: absolute;
+  content: '"';
+  font-size: 80px;
+  top: 10px;
+  left: 3px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 1.1; /*なぜ　*/
+  color:#fffcfc;
+  display: block;
+  height: 50px;
+  width: 50px;
+  background-color:#999797 ;
+}
+
+.article__image {
+  padding: 1em;
+}
+
+.article__sub-sub-title {
+  font-weight: bold;
+  padding-left: 2.5em;
+  position: relative;
+}
+
+.article__sub-sub-title:before {
+  position: absolute;
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: #4d4d4d;
+  border-radius: 50px;
+  left: 14px;
+  top: 8px;
+}
+
+.article__sub-sub-title:after{
+  position: absolute;
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: #999797;
+  border-radius: 50px;
+  left: 22px;
+  top: 8px;
+}
+
+.article__order-list {
+  padding: 1em;
+}
+/* 番号リストの表示 https://on-ze.com/archives/489 */
+
+.article__order-list-item {
+  list-style: none;
+  counter-increment: number;
+}
+
+.article__order-list-item:before {
+  content: counter(number)".";
+  margin-right: 1ex;
+}
+
+.form {
+  background-color: #fffcfc;
+  position: relative;
+}
+
+.form:before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 60px;
+  background-color: #fffcfc;
+  z-index: 1; /* 前に持ってくる */
+  top: 0px;
+  left: 10px;
+}
+
+.form__title {
+  font-size: 25px;
+  font-weight: 600;
+  color: #474747;
+  padding: 1ex;
+  padding-top: 30px;
+  margin-left: 50px;
+
+  text-shadow: 0px 0px 1px #c4c4c4;
+  position: relative;
+}
+
+.form__title:before {
+  position: absolute;
+  content: "";
+  display: block;
+  height: 30px;
+  width: 30px;
+  border: solid 2px black;
+  transform: rotate(45deg);
+  top: 6px;
+  left: -30px;
+}
+
+
+.form__title:after {
+  position: absolute;
+  content: "";
+  display: block;
+  height: 20px;
+  width:30px;
+  border: 2px solid black;
+  top: 30px;
+  left: -30px;
+}
+
+.form-item {
+  display: flex;
+  padding: 1em;
+}
+
+.form-item__label {
+  flex: 0 0 190px; 
+  text-shadow: 0px 0px 3px #c4c4c4;
+  font-weight: bold;
+  color: #474747;
+  text-align: right;
+
+  /* text-align:end;を試みたが、ラジオボタンとチェックボックスが揃わない */
+}
+
+input[type="text"],input[type="password"] {
+  border-radius: 4px;
+  border: 1px solid #cfcdcd;
+  flex: 0 0 60%;
+  height: 20px;
+  margin-left: 2em ;
+}
+
+textarea[name="example3"] {
+  margin-left: 2em;
+  flex: 0 0 60%;
+  height: 200px;
+}
+
+.form-item__inline-items{
+  display: flex;
+  width: 451px;
+  
+}
+
+.form-item__radio {
+  border: 1px solid #c7c7c7;
+  margin-left: 2em ;
+  padding: 1ex;
+  background-color: #e8e8e8;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.form-item__checkbox {
+  border: 1px solid #c7c7c7;
+  margin-left: 2em;
+  margin-right: 1px;
+  padding: 1ex;
+  background-color:#d1d1d1;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+
+.form-item__select-pull-down {
+  background-color:#e8e8e8;
+  margin-left: 2em;
+  flex: 0 0 60%;
+  height: 25px;
+  box-shadow: 0px -1px 1px #9e9e9e;/*　見本のようにうまく行きません。　ボックスシャドウ https://saruwakakun.com/html-css/basic/box-shadow */
+}
+
+.form-item__select-list {
+  box-shadow: 0px -1px 0px #9e9e9e; /*ボーダーの一番上だけ太いような気がしたので */
+  border-radius: 2px;
+  margin-left: 2em;
+  flex: 0 0 60%;
+}
+
+.form-item__select-list-option {
+  background-color: #e8e8e8;
+  padding: 1ex;
+  border: solid 1px #cfcdcd;
+  font-weight: bold;
+  color: #474747;
+}
+
+.form-item__file {
+  border: solid 1px #cfcdcd;
+  border-radius: 3px;
+  margin-left: 2em;
+  padding: 1ex;
+  flex: 0 0 60%;
+  background-color:#e8e8e8;
+  box-shadow: 0px -1px 1px #9e9e9e;
+}
+
+
+
+.form-item__actions-items{
+  width: 350px;
+  padding: 1ex;
+  display: flex;
+  justify-content: space-around;
+  margin-left: 2em;
+}
+
+
+/* classを指定しても変化がなかったためこの方法をとった 参考　https://www.nishishi.com/css/design-only-button.html　*/
+input[type="submit"]{
+ width: 150px;
+ height: 35px;
+ background-color: #4d4d4d;
+ border-radius: 4px;
+ color: #f5f5f5;
+}
+
+input[type="reset"]{
+  width: 150px;
+  height: 35px;
+  background-color: #d1d1d1;
+  border-radius: 4px;
+}/*送信ボタンをを少し上にしてラベルと平行にするには？　 */ 
+
+.local-nav{
+  background-color: #A9A9A9;
+  margin-top: 1em;
+  height: 200px;
+  overflow: auto;
+  
+}
+
+.local-nav__items{
+  width: 100%;
+}
+
+.local-nav__item {
+  display:flex;
+  align-items: center;
+  padding-left: 1em;
+  border-bottom: solid 1px #666;　/* 下だけボーダー　*/
+  margin: 0 auto;
+}
+
+.local-nav__link{
+  text-decoration: none;
+  color: #f5f5f5;
+}
+
+.footer{
+  clear: both;
+  position: relative;
+}
+
+.footer:after{
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.footer-nav{
+  float: left;
+  width: 50%;
+  padding: 1em;
+  display: flex;
+  font-size: small;
+}
+
+.footer-nav__item{
+  color: #f5f5f5;
+  padding: 1ex;
+}
+
+.footer-nav__link{
+  color:#f5f5f5;
+}
+
+.footer-nav__item:before {
+  content: '>';
+  padding: 0 10px;
+}
+  
+.footer-nav__items{
+  flex: 1;
+}
+
+.about-author{
+  width: 45%; 
+  height: 250px;
+  float: right;
+  position: relative;
+  padding: 1em;
+  margin: 1em;
+  margin-bottom: 50px; /*フッターナビと被ってしまったので後から追加 */
+  background-color: #d1d1d1;
+  border-radius: 3px;
+ 
+}
+
+.about-author__descriptions{
+  width: 68%;
+  float: right;
+  position: absolute;
+  top: 15px;
+  right: 0;
+  padding: 1em;
+}
+
+.about-author__term { 
+  width: 30%;
+  text-align: end;
+  float: left;
+  padding: 3px;
+}
+
+.about-author__description{
+  width: 65%;
+  float: right;
+  padding: 3px;
+}
+
+.footer-copyright{
+  position: absolute;
+  display: block;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  padding: 1em;
+  color: #f5f5f5;
+  font-size: ;
+}
+
+.about-author__title {
+  text-shadow: 0px 0px 3px #c4c4c4;
+}
+
+.about-author__image {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  /*　アイコン丸にする　参考 http://delaymania.com/201502/web/css-img-radius/ */
+  margin: 1ex;
+}
+
+
+
+/* boxの高さ、幅に border-width と padding を含める */
+* {
+  box-sizing: border-box
+}
+
+/* 全体を真ん中に配置 */
+
+
+body {
+  background-color: #aaa;
+}
